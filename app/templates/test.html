@@ -3,6 +3,7 @@
 <div class="form-container">
 
    <form id="form1" novalidate method="post">
+      {% csrf_token %}
       <input type="hidden"/>
       <div class="form-group">
           <label>Username (required)</label>

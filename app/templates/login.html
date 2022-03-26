@@ -11,6 +11,7 @@
 </head>
 <body>
     <form novalidate method="post" id="login">
+		{% csrf_token %}
 		<input type="hidden"/>
 		<div class="form-group">
 			<input type="text" name="username" required data-pristine-required-message="Please choose a username">
