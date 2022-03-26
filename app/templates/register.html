@@ -1,35 +1,49 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<script src={% static 'dist/pristine.js' %}  type="text/javascript"></script>
+	<script src={% static 'register_validate.js' %} type="text/javascript"></script>
     <title>LOGIN</title>
+	
 </head>
 <body>
-    <form action="?" method="post">
-        <input type="text" name="username">
-        <input type="password" name="password">
-        <select name="college">
-            <option value="alameda">Alameda</option>
-            <option value="berkeley">Berkeley</option>
-            <option value="laney">Laney</option>
-            <option value="meritt">Meritt</option>
-        </select>
-        <select name="classes">
-            <option value="calc">Calculus</option>
-            <option value="cs">computer Science</option>
-            <option value="chem">Chemistry</option>
-            <option value="engl">English</option>
-        </select>
-        <select name="intrests">
-            <option value="programming">Programming</option>
-            <option value="applied">Applied Math</option>
-            <option value="humanities">Literautre and Humanities</option>
-        </select>
-        <textarea name="bio" cols="30" rows="10"></textarea>
-        <input type="submit">
-        <a href="#">Forgot login?</a>
-    </form>
+	<div class="form-container">
+		<form novalidate method="post" id="form1">
+			<input type="hidden"/>
+			<div class="form-group">
+				<input type="text" name="username" required data-pristine-required-message="Please choose a username">
+			</div>
+			<div class="form-group">
+				<input type="password" name="password" 
+				required data-pristine-required-message="Please choose a password" 
+				data-pristine-pattern= "/^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9]).{8,}$/" 
+				data-pristine-pattern-message="Minimum 8 characters, at least one uppercase letter, one lowercase letter and one number">
+			</div>
+			<select name="college">
+				<option value="alameda">Alameda</option>
+				<option value="berkeley">Berkeley</option>
+				<option value="laney">Laney</option>
+				<option value="meritt">Meritt</option>
+			</select>
+			<select name="classes">
+				<option value="calc">Calculus</option>
+				<option value="cs">computer Science</option>
+				<option value="chem">Chemistry</option>
+				<option value="engl">English</option>
+			</select>
+			<select name="intrests">
+				<option value="programming">Programming</option>
+				<option value="applied">Applied Math</option>
+				<option value="humanities">Literautre and Humanities</option>
+			</select>
+			<textarea name="bio" cols="30" rows="10"></textarea>
+			<input type="submit" name="submit">
+			<a href="#">Forgot login?</a>
+		</form>
+	</div>
 </body>
 </html>
