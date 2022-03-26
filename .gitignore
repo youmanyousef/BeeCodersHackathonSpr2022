@@ -128,4 +128,4 @@ dmypy.json
 # Pyre type checker
 .pyre/
 
-studentfinder/__pycache__/
+studentfinder/__pycache__/*
