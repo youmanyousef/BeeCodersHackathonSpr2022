@@ -34,7 +34,7 @@ class Project(models.Model):
         ## Body
     description = models.CharField(max_length=200, blank=True)
         ## Date
-    date_time = models.DateTimeField();
+    date_time = models.DateTimeField()
         ## Edited dates (probably not needed)
 
     # Thread/Comments (possibly a json objecet with

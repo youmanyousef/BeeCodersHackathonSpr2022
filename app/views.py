@@ -1,12 +1,13 @@
 from django.shortcuts import render
 from django.http import HttpResponse, HttpResponseRedirect
 from django.urls import reverse
+from django.db import IntegrityError
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import authenticate, login, logout
 
 from datetime import datetime
 
-from .models import Project
+from .models import Project, StudentUser
 
 # Create your views here.
 def index(request):
@@ -40,6 +41,31 @@ def delete(request, id):
 def delete_page(request):
     # todo implement deletion page, offer projects user has created
     return render(request, 'index.html') #change template
+
+def register(request):
+    if request.method == 'POST':
+        username = request.POST.get('username')
+        
+        password = request.POST.get('password')
+        confirmation = request.POST.get('confirmation')
+        if password != confirmation:
+            #todo display error
+            print("error")
+
+        #attempt to create user
+        try:
+            user = StudentUser.objects.create_user(username, password)
+            user.save()
+        except IntegrityError:
+            # todo display "username taken"
+            print("error")
+
+        # Log in user, then redirect to home page
+        login(request, user)
+        return HttpResponseRedirect(reverse('index'))
+    else:
+        # render registration page
+        return render(request, 'register.html')
 
 def login_view(request):
     if request.method == "POST":
