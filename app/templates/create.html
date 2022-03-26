@@ -7,11 +7,11 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>login</h1>
-    <form method="POST" action="{% url 'login' %}">
+    <h1>Create project</h1>
+    <form method="post" action="{% url 'create' %}" id="create_post">
         {% csrf_token %}
-        <input type="text" name="username">
-        <input type="password" name="password">
+        <input type="text" name="project_title">
+        <input type="text" name="project_desc">
         <input type="submit">
     </form>
 </body>
