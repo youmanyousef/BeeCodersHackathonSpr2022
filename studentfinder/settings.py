@@ -54,7 +54,9 @@ ROOT_URLCONF = 'studentfinder.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [
+            'studentfinder/www/'
+        ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
