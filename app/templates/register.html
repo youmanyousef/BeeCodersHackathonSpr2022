@@ -15,15 +15,22 @@
 		<form novalidate method="post" id="register">
 			<input type="hidden"/>
 			<div class="form-group">
+				<label>Username</label>
 				<input type="text" name="username" required data-pristine-required-message="Please choose a username">
 			</div>
 			<div class="form-group">
-				<input type="password" name="password" 
+				<label>Password</label>
+				<input type="password" name="password" id="pwd"
 				required data-pristine-required-message="Please choose a password" 
 				data-pristine-pattern= "/^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9]).{8,}$/" 
 				data-pristine-pattern-message="Minimum 8 characters, at least one uppercase letter, one lowercase letter and one number">
 			</div>
-			<select name="college">
+			<div class="form-group">
+				<label>Retype password</label>
+				<input type="password" data-pristine-equals="#pwd" 
+				data-pristine-equals-message="Passwords don't match" class="form-control" />
+			</div>
+			<select name="school">
 				<option value="alameda">Alameda</option>
 				<option value="berkeley">Berkeley</option>
 				<option value="laney">Laney</option>
@@ -40,7 +47,7 @@
 				<option value="applied">Applied Math</option>
 				<option value="humanities">Literautre and Humanities</option>
 			</select>
-			<textarea name="bio" cols="30" rows="10"></textarea>
+			<textarea name="biography" cols="30" rows="10"></textarea>
 			<input type="submit" name="submit">
 			<a href="#">Forgot login?</a>
 		</form>
