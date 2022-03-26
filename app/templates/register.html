@@ -12,7 +12,7 @@
 </head>
 <body>
 	<div class="form-container">
-		<form novalidate method="post" id="register">
+		<form action="{% url 'register' %}" novalidate method="post" id="register">
 			{% csrf_token %}
 			<input type="hidden"/>
 			<div class="form-group">

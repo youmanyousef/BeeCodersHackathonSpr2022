@@ -6,10 +6,10 @@ window.onload = function () {
    pristine = new Pristine(form);
 
    form.addEventListener('submit', function (e) {
-	  e.preventDefault();
 	  var valid = pristine.validate();
-	  //alert('Form is valid: ' + valid);
-
+     if(!valid) {
+        e.preventDefault();
+     }
    });
 
 
