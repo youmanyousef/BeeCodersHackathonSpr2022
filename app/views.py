@@ -9,3 +9,6 @@ def index(request):
         'user': user
     }
     return render(request, 'index.html', context=context)
+
+def projects(request):
+    return HttpResponse()

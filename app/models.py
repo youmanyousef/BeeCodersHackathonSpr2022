@@ -1,8 +1,9 @@
 from django.db import models
+from django.contrib.auth.models import AbstractUser
 
 # Create your models here.
 # student/user data tables
-class User(models.Model):
+class StudentUser(AbstractUser):
     first_name = models.CharField(max_length=30)
     last_name = models.CharField(max_length=30)
     school = models.CharField(max_length=60) # Create separate table with colleges and serve recommendations based on existing colleges in db?
@@ -20,7 +21,7 @@ class User(models.Model):
 
 # Project Listing data tables
 class Project(models.Model):
-    author = models.ForeignKey(User, on_delete=models.CASCADE)
+    author = models.ForeignKey(StudentUser, on_delete=models.CASCADE)
     complete = models.BooleanField(default=False)
     title = models.CharField(max_length=80)
     description = models.CharField(max_length=200, blank=True)
@@ -41,3 +42,8 @@ class Project(models.Model):
             ### is Followed? boolean
     # is Complete? boolean
     # Followers (list of followed Students IDs)
+
+class Comment(models.Model):
+    author = models.ForeignKey(StudentUser, on_delete=models.CASCADE)
+    project = models.ForeignKey(Project, on_delete=models.CASCADE)
+    content = models.CharField(max_length=300) 
