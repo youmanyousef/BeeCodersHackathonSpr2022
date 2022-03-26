@@ -51,6 +51,7 @@ def register(request):
         if password != confirmation:
             #todo display error
             print("error")
+            return HttpResponseRedirect(reverse('index'))
 
         #attempt to create user
         try:
