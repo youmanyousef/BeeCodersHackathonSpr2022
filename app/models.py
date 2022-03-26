@@ -1,6 +1,8 @@
 from django.db import models
 from django.contrib.auth.models import AbstractUser
 
+import uuid
+
 # Create your models here.
 # student/user data tables
 class StudentUser(AbstractUser):
@@ -22,6 +24,7 @@ class StudentUser(AbstractUser):
 # Project Listing data tables
 class Project(models.Model):
     # Unique primary ID (key)
+    id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     # Post field (possibly a json object with
         ## Project Name
     title = models.CharField(max_length=80)

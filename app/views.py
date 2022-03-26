@@ -4,14 +4,15 @@ from django.urls import reverse
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import authenticate, login, logout
 
+from datetime import datetime
+
 from .models import Project
 
 # Create your views here.
 def index(request):
     #return HttpResponse("hello worlds!")
-    user='yousef'
     context = {
-        'user': user
+        'user': request.user 
     }
     return render(request, 'index.html', context=context)
 
@@ -25,18 +26,20 @@ def create(request):
         new_project = Project(title=title, description=description, author=request.user, date_time=datetime.now())
         new_project.save()
 
-def delete(request, project_id):
-    if request.method == 'POST':
-        # get project from db with corresponding id
-        project_obj = Project.objects.get(id=project_id)
-        # delete only if the request user is the author of project
-        if request.user == project_obj.author:
-            project_obj.delete()
+def delete(request, id):
+    # get project from db with corresponding id
+    project_obj = Project.objects.get(id=id)
+    # delete only if the request user is the author of project
+    if request.user == project_obj.author:
+        print(project_obj)
+        print(request.user)
+        project_obj.delete()
         
-        #todo implement else
-    if request.method == 'GET':
-        # todo implement deletion page, offer projects user has created
-        return render(request, 'index.html') #change template
+    #todo implement else
+
+def delete_page(request):
+    # todo implement deletion page, offer projects user has created
+    return render(request, 'index.html') #change template
 
 def login_view(request):
     if request.method == "POST":
