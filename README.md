@@ -1,7 +1,2 @@
 # BeeCodersHackathonSpr2022
-bottom text
-
-
-```py
-print("susy backa")
-```
+This project is still under construction
