@@ -483,16 +483,16 @@ body {
 	transform: translateY(-50%);
 }*/
 
-.project-content .project-title {
+.project-content .project-title-card  {
 	display:flex;
 	flex-direction: row;
 	width: 100%;
 	height: 29%;
 }
-.project-title .col-title {
+.project-title-card .col-title {
 	width: 80%;
 }
-.project-title .col-follow {
+.project-title-card .col-follow {
 	width: 19%;
 }
 .col-follow i {
