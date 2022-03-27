@@ -1,3 +1,7 @@
+:root {
+	--radius: 9px;
+}
+
 *, html, body {
   margin: 0;
   padding: 0;
@@ -113,18 +117,20 @@ body {
 	justify-content: center;
 	align-items: center;
 	height: 100vh;
-}
-.login-form #login {
-	width: 40vw;
+	
 }
 .login-form input[type=text], .login-form input[type=password]{
-	width: 100%;
+	width: calc(100% - 10px);
 	height: 40px;
-	font-size: 36px;
-	margin-top: 20px;
+	font-size: 32px;
+	margin-top: 10px;
+	border: 0;
+	padding: 5px;
 }
-.login-form .pristine-error .text-help {
-	width: 40vw;
+.login-form input, .login-form button {
+	margin-top: 10px;
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
+	border-radius: var(--radius);
 }
 .login-form input[type=submit]{
 	align-items: center;
@@ -132,7 +138,157 @@ body {
 	border: none;
 	color: white;
 	padding: 16px 32px;
+	/* padding-right: 10px; */
 	text-decoration: none;
-	margin: 4px 2px;
+	width: 50%;
+}
+.login-form button{
+	float:right;
+	align-items: center;
+	background-color: #9aa5b1;
+	border: none;
+	color: white;
+	padding: 16px 32px;
+	/* padding-right: 10px; */
+	text-decoration: none;
+	width: 49%;
+}
+
+@media only screen and (max-width: 1400px) {
+	.login-form .pristine-error .text-help, .login-form #login{
+		width: 70vw;
+	}
+	.login-form input[type=submit]{
+		width: 49%;
+	}
+	.login-form button{
+		width: 49%;
+	}
+}
+@media only screen and (max-width: 500px) {
+	.login-form .pristine-error .text-help, .login-form #login{
+		width: calc(100vw - 10px);
+	}
+	.login-form input[type=submit]{
+		width: 49%;
+	}
+	.login-form button{
+		width: 49%;
+	}
+}
+@media only screen and (min-width: 1400px) {
+	.login-form .pristine-error .text-help, .login-form #login {
+		width: 50vw;
+	}
 }
 /* END LOGIN FORM*/
+
+/* REGISTRATION FORM*/
+.form-container textarea { resize: none; }
+.form-container {
+	
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+	
+}
+.form-container input[type=text], .form-container input[type=password], .biography {
+	width: calc(100% - 12px);
+	padding: 5px;
+}
+.form-container input[type=text], .form-container input[type=password]{
+	height: 40px;
+	font-size: 32px;
+	border: 0;
+}
+.form-container input:not([type=checkbox]), .form-container button, .form-container .classes {
+	margin-top: 10px;
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
+	border-radius: var(--radius);
+}
+.form-container select { width: 100%; font-size:28px;}
+
+.form-container .classes {
+	z-index:2;
+	border:none;
+	width: calc(100% - 5px);
+	height:100px;
+	overflow-y:scroll;
+	margin-top: 10px;
+	padding:2px;
+}
+.form-container .classes label {margin-left: 2px; }
+.form-container .classes input {margin-top: 5px;}
+.form-container input[type=text], .form-container input[type=password], .form-container p,
+.form-container input[type=submit], .form-container select, .form-container button, .biography {
+	margin-top: 10px;
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
+	border-radius: var(--radius);
+}
+/* width */
+::-webkit-scrollbar {
+	width: 10px;
+}
+/* Handle */
+::-webkit-scrollbar-thumb {
+	background: #888; 
+	border-radius: var(--radius);
+}
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+	background: #555; 
+}
+
+.form-container input[type=submit]{
+	align-items: center;
+	background-color: #9aa5b1;
+	border: none;
+	color: white;
+	padding: 16px 32px;
+	/* padding-right: 10px; */
+	text-decoration: none;
+	width: 50%;
+}
+.form-container button{
+	float:right;
+	align-items: center;
+	background-color: #9aa5b1;
+	border: none;
+	color: white;
+	padding: 16px 32px;
+	/* padding-right: 10px; */
+	text-decoration: none;
+	width: 49%;
+}
+
+@media only screen and (max-width: 1400px) {
+	.form-container .pristine-error .text-help /*,.login-form #login*/ { 
+		width: 80vw;
+	}
+	.form-container input[type=submit]{
+		width: 49%;
+	}
+	.form-container button{
+		width: 49%;
+	}
+}
+@media only screen and (max-width: 500px) {
+	.form-container .pristine-error .text-help /*,.login-form #login*/{
+		width: calc(100vw - 10px);
+	}
+	.form-container input[type=submit]{
+		width: 49%;
+	}
+	.form-container button{
+		width: 49%;
+	}
+}
+@media only screen and (min-width: 1400px) {
+	.form-container .pristine-error .text-help /*,.login-form #login*/{
+		width: 50vw;
+	}
+}
+
+
+/* END REGISTRATION FORM*/
