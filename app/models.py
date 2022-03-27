@@ -62,9 +62,9 @@ class Project(models.Model):
         ## Date
     date_time = models.DateTimeField()
         ## Edited dates (probably not needed)
-    image = models.CharField(max_length=1000, blank=True)
+    image = models.CharField(max_length=1000, blank=True, default='https://th.bing.com/th/id/R.94d34c4d6d146c99de2cf37f22409def?rik=S0W1F0%2fNmqIspQ&riu=http%3a%2f%2fwww.purpletoyshop.com%2fwp-content%2fuploads%2f2014%2f10%2fRaceWay-Floor-Rug-for-Kids-Closeup.jpg&ehk=hb7jrEIXiE%2fLcsvc5P6bZ8DTcQLwC6S5ciS6WRARkpY%3d&risl=&pid=ImgRaw&r=0')
 
-    tags = models.ManyToManyField(ProjectTag)
+    tags = models.ManyToManyField(ProjectTag, blank=True)
 
     # Thread/Comments (possibly a json objecet with
         ## All comments

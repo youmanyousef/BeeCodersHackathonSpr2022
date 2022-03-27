@@ -3,12 +3,9 @@
 {% load static %}
 
 {% block body %}
+<div class="explore-container">
 	<script src="https://kit.fontawesome.com/0c698512f3.js" crossorigin="anonymous"></script>
-	{% if user.is_authenticated %}
-		<h1 class="exp-toptext">Welcome {{ user.is_authenticated }}}!</h1>
-	{% else %}
-		<h1 class="exp-toptext">Login to get get notified for projects that interest you!</h1>
-	{% endif%}
+	<h1 class="exp-toptext">Explore</h1>
 	<div class="projects-filter">
 		<form class="filter-query">
 			<input type="text" placeholder="Search:">
@@ -38,18 +35,13 @@
 
 	<div class="projects-container">
 		<!-- iterate stuff here later, heres an example for 2 rows -->
-		<div class="project"> 
+		<!--div class="project"> 
 			<img src="{% static 'cover.png' %}" alt="cover">
 			<div class="project-content">
 				<div class="project-title-card">
-					<!--div class="v-center">
-						<strong>NEED HELP! CHEM HW</strong><span> - Chris</span>
-						<i class="fa-solid fa-plus" stu></i>
-
-					</div-->
 					<div class="col-title">
 						<strong>NEED HELP WITH HW</strong>
-						<span>- Chris Y.</span>
+						<span>- Chris Y - Calculus</span>
 					</div>
 					<div class="col-follow">
 						<a href="#"><i class="fa-solid fa-plus" stu></i></a>
@@ -58,12 +50,40 @@
 					</div>
 				</div>
 				<div class="project-desc">
-					<!-- mr backend, limit to 60 chars. -->
+					**mr backend, limit to 60 chars.**
 					<div class="v-center">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ...</div>
 				</div>
 			</div>
-		</div>
-		<div class="project"> jo </div>
+		</div-->
+		{% for project in projects %}
+			
+			<div class="project" style="background-image: linear-gradient(45deg, rgba(0,0,0,.3), 40%, rgba(0,0,0,1)), url({{project.image}});"> 
+				<img src="{% static 'cover.png' %}" alt="cover">
+				<div class="project-content">
+					<div class="project-title-card">
+						<div class="col-title"><a href="/project/{{project.id}}">
+							<strong>{{project.title}}</strong>
+							<span>- {{project.author}} - {% for subject in project.subject.all %} {{subject}} {% endfor%}</span></a>
+						</div>
+						<div class="col-follow">
+							<a href="#"><i class="fa-solid fa-plus" stu></i></a>
+							<a href="#"><i class="fa-solid fa-heart"></i></a>
+							<a href><i class="fa-solid fa-ellipsis"></i></a>
+						</div>
+					</div>
+					<div class="project-desc">
+						<!--mr backend, limit to 60 chars.**-->
+						<div class="v-center">{{ project.description|slice:":200" }}...</div>
+					</div>
+				</div>
+			</div>
+			</a>
+		{% endfor %}
 		
+		<div class="projects-navigation">
+			<button class="nav-prev">PREVIOUS</button>
+			<button class="nav-next">NEXT</button>
+		</div>
 	</div>
+</div>
 {% endblock %}
