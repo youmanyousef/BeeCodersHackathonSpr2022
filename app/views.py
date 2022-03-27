@@ -4,6 +4,7 @@ from django.urls import reverse
 from django.db import IntegrityError
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import authenticate, login, logout
+from django.core.exceptions import ObjectDoesNotExist
 
 from datetime import datetime
 
@@ -13,8 +14,21 @@ from .models import Project, StudentUser
 def index(request):
     return render(request, 'index.html')
 
-def project(request):
-    return render(request, 'project.html')
+def project(request, id):
+    try:
+        project_obj = Project.objects.get(id=id)
+        return render(request, 'project.html', {
+            "title": project_obj.title,
+            "description": project_obj.description,
+            "author": project_obj.author,
+            "date_time": project_obj.date_time,
+            "image": project_obj.image,
+            "id": project_obj.id,
+            "tags": project_obj.tags.all(),
+        })
+    except ObjectDoesNotExist:
+        return render(request, 'index.html') # TODO IMPLEMENT 404 PAGE
+
 
 def create(request):
     if request.method == 'GET':

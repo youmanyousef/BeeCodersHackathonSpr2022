@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import StudentUser, Project, Comment, SubjectClass
+from .models import StudentUser, Project, Comment, SubjectClass, ProjectTag
 
 class ProjectAdmin(admin.ModelAdmin):
     list_display = ('id', 'title', 'author', 'date_time')
@@ -9,3 +9,4 @@ admin.site.register(StudentUser)
 admin.site.register(Project, ProjectAdmin)
 admin.site.register(Comment)
 admin.site.register(SubjectClass)
+admin.site.register(ProjectTag)
