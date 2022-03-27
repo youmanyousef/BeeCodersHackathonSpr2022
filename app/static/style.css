@@ -537,5 +537,23 @@ body {
 	top: 50%;
 	transform: translateY(-50%);
 }
-
+.projects-navigation {
+	width: 100%;
+}
+.projects-navigation button {
+	width: 50%;
+	align-items: center;
+	background-color: #9aa5b1;
+	border: none;
+	color: white;
+	padding: 16px 32px;
+	margin-top: 10px;
+	text-decoration: none;
+	width: 50%;
+	border-radius: var(--radius);
+}
+.projects-navigation .nav-next {
+	width: 49%;
+	float:right;
+}
 /* END PROJECT EXPLORER*/

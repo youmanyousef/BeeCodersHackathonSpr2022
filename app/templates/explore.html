@@ -60,7 +60,7 @@
 		</div-->
 		{% for project in projects %}
 			
-			<div class="project"> 
+			<div class="project" style="background-image: linear-gradient(45deg, rgba(0,0,0,.3), 40%, rgba(0,0,0,1)), url({{project.image}});"> 
 				<img src="{% static 'cover.png' %}" alt="cover">
 				<div class="project-content">
 					<div class="project-title-card">
@@ -83,5 +83,9 @@
 			</a>
 		{% endfor %}
 		
+		<div class="projects-navigation">
+			<button class="nav-prev">PREVIOUS</button>
+			<button class="nav-next">NEXT</button>
+		</div>
 	</div>
 {% endblock %}
