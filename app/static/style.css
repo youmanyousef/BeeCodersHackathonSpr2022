@@ -237,6 +237,7 @@ body {
 	align-items: center;
 	
 }
+
 .login-form input[type=text], .login-form input[type=password]{
 	width: calc(100% - 10px);
 	height: 40px;
@@ -244,7 +245,14 @@ body {
 	margin-top: 10px;
 	border: 0;
 	padding: 5px;
+	background-color:rgba(0, 0, 0, 0);
+	color: white;
 }
+
+.login-form input[type=text]:focus, .login-form input[type=password]:focus {
+	outline: none;
+}
+
 .login-form input, .login-form button {
 	margin-top: 10px;
 	border-radius: var(--radius);
