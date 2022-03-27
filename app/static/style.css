@@ -1,0 +1,298 @@
+:root {
+	--radius: 9px;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+*, html, body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: #1e1e1e;
+    color: #d1d0c5;
+}
+
+.fa-solid {
+  margin-right: 10px;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.nav-bar {
+  background-color: rgba(49, 49, 49, 0.8);
+  width: 100vw;
+  display: flex;
+  place-content: space-between;
+  height: 60px;
+}
+
+.nav-bar ul {
+  list-style-type: none;
+  display: flex;
+}
+
+.nav-left {
+  font-size: 15px;
+  margin: auto 0;
+  padding-left: 15px;
+}
+
+.nav-right li {
+  transition: 100ms;
+  display: flex;
+}
+
+.nav-right li:hover {
+  background-color: #505050;
+}
+
+.nav-right li a {
+  text-decoration: none;
+  color: #d1d0c5;
+  font-size: 13px;
+  padding: 10px;
+  margin: auto 0;
+}
+
+.content {
+  display: flex;
+  flex: 1;
+  width: 80%;
+  height: auto;
+  margin: 40px auto 20px auto;
+}
+
+.left-bar {
+  width: 300px;
+}
+
+.left-bar ul {
+  list-style-type: none;
+}
+
+.left-bar ul li {
+  padding: 25px 15px;
+  margin: 5px 0;
+  border-radius: 9px;
+  transition: 100ms;
+}
+
+.left-bar ul li:hover {
+  background-color: #505050;
+}
+
+.left-bar ul li a {
+  color: #d1d0c5;
+  text-decoration: none;
+}
+
+.main-content {
+  width: 100%;
+  margin-left: 25px;
+  margin-right: 25px;
+  display: flex;
+}
+
+.content-body {
+  width: 100%;
+  margin: 0 30px;
+}
+
+.vl {
+  border: solid .1px #d1d0c5;
+}
+
+.right-bar {
+  width: 400px;
+  height: 800px;  
+  padding: 15px;
+  background-color: rgba(44, 44, 44, 0.5);
+  border-radius: 9px;
+}
+
+.right-bar .header {
+	font-size: 25px;
+}
+
+/* LOGIN FORM*/
+.login-form {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	
+}
+.login-form input[type=text], .login-form input[type=password]{
+	width: calc(100% - 10px);
+	height: 40px;
+	font-size: 32px;
+	margin-top: 10px;
+	border: 0;
+	padding: 5px;
+}
+.login-form input, .login-form button {
+	margin-top: 10px;
+	border-radius: var(--radius);
+}
+.login-form input[type=submit]{
+	align-items: center;
+	background-color: #9aa5b1;
+	border: none;
+	color: white;
+	padding: 16px 32px;
+	/* padding-right: 10px; */
+	text-decoration: none;
+	width: 50%;
+}
+.login-form button{
+	float:right;
+	align-items: center;
+	background-color: #9aa5b1;
+	border: none;
+	color: white;
+	padding: 16px 32px;
+	/* padding-right: 10px; */
+	text-decoration: none;
+	width: 49%;
+}
+
+@media only screen and (max-width: 1400px) {
+	.login-form .pristine-error .text-help, .login-form #login{
+		width: 70vw;
+	}
+	.login-form input[type=submit]{
+		width: 49%;
+	}
+	.login-form button{
+		width: 49%;
+	}
+}
+@media only screen and (max-width: 500px) {
+	.login-form .pristine-error .text-help, .login-form #login{
+		width: calc(100vw - 10px);
+	}
+	.login-form input[type=submit]{
+		width: 49%;
+	}
+	.login-form button{
+		width: 49%;
+	}
+}
+@media only screen and (min-width: 1400px) {
+	.login-form .pristine-error .text-help, .login-form #login {
+		width: 50vw;
+	}
+}
+/* END LOGIN FORM*/
+
+/* REGISTRATION FORM*/
+.form-container textarea { resize: none; }
+.form-container {
+	
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	
+}
+.form-container input[type=text], .form-container input[type=password], .biography {
+	width: calc(100% - 12px);
+	padding: 5px;
+}
+.form-container input[type=text], .form-container input[type=password]{
+	height: 40px;
+	font-size: 32px;
+	border: 0;
+}
+.form-container input:not([type=checkbox]), .form-container button, .form-container .classes {
+	margin-top: 10px;
+	border-radius: var(--radius);
+}
+.form-container select { width: 100%; font-size:28px;}
+
+.form-container .classes {
+	z-index:2;
+	border:none;
+	width: calc(100% - 5px);
+	height:100px;
+	overflow-y:scroll;
+	margin-top: 10px;
+	padding:2px;
+}
+.form-container .classes label {margin-left: 2px; }
+.form-container .classes input {margin-top: 5px;}
+.form-container input[type=text], .form-container input[type=password], .form-container p,
+.form-container input[type=submit], .form-container select, .form-container button, .biography {
+	margin-top: 10px;
+	border-radius: var(--radius);
+}
+/* width */
+::-webkit-scrollbar {
+	width: 10px;
+}
+/* Handle */
+::-webkit-scrollbar-thumb {
+	background: #888; 
+	border-radius: var(--radius);
+}
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+	background: #555; 
+}
+
+.form-container input[type=submit]{
+	align-items: center;
+	background-color: #9aa5b1;
+	border: none;
+	color: white;
+	padding: 16px 32px;
+	/* padding-right: 10px; */
+	text-decoration: none;
+	width: 50%;
+}
+.form-container button{
+	float:right;
+	align-items: center;
+	background-color: #9aa5b1;
+	border: none;
+	color: white;
+	padding: 16px 32px;
+	/* padding-right: 10px; */
+	text-decoration: none;
+	width: 49%;
+}
+
+@media only screen and (max-width: 1400px) {
+	.form-container .pristine-error .text-help /*,.login-form #login*/ { 
+		width: 80vw;
+	}
+	.form-container input[type=submit]{
+		width: 49%;
+	}
+	.form-container button{
+		width: 49%;
+	}
+}
+@media only screen and (max-width: 500px) {
+	.form-container .pristine-error .text-help /*,.login-form #login*/{
+		width: calc(100vw - 10px);
+	}
+	.form-container input[type=submit]{
+		width: 49%;
+	}
+	.form-container button{
+		width: 49%;
+	}
+}
+@media only screen and (min-width: 1400px) {
+	.form-container .pristine-error .text-help /*,.login-form #login*/{
+		width: 50vw;
+	}
+}
+
+
+/* END REGISTRATION FORM*/

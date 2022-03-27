@@ -15,7 +15,10 @@ def index(request):
     context = {
         'user': request.user 
     }
-    return render(request, 'index.html', context=context)
+    return render(request, 'layout.html', context=context)
+
+def project(request):
+    return render(request, 'project.html')
 
 def create(request):
     if request.method == 'GET':

@@ -1,13 +1,59 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
     <head>
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="{% static 'style.css' %}">
+        <script src="https://kit.fontawesome.com/0c698512f3.js" crossorigin="anonymous"></script>
         <title>Student Finder</title>
     </head>
     <body>
-        
-        {% block body %}
+        <div class="container">
+            <nav class="nav-bar">
+                <ul class="nav-left">
+                    <li>
+                        <i class="fa-solid fa-people-line"></i>
+                        Find groupwork in your area 
+                    </li>
+                </ul>
+                <ul class="nav-right">
+                    <li><a href="{% url 'index' %}">Home</a></li>
+                    <li><a href="{% url 'index' %}">Join A Project</a></li>
+                    <!-- {% if user is not None %} -->
+                    <li><a href="{% url 'logout' %}">Logout</a></li>
+                    <!-- {% else %} -->
+                    <li><a href="{% url 'login' %}">Login</a></li>
+                    <li><a href="{% url 'register' %}">Register</a></li>
+                    <!-- {% endif %} -->
+                </ul>
+            </nav> 
+    
+            <div class="content">
+                <nav class="left-bar">
+                    <ul>
+                        <li><a href="{% url 'index' %}"><i class="fa-solid fa-house"></i> Home</a></li>
+                        <li><a href="{% url 'index' %}"><i class="fa-solid fa-earth-americas"></i> Explore</a></li>
+                        <li><a href="{% url 'index' %}"><i class="fa-solid fa-bell"></i> Notificatons</a></li>
+                        <li><a href="{% url 'index' %}"><i class="fa-solid fa-message"></i> Messages</a></li>
+                        <li><a href="{% url 'index' %}"><i class="fa-solid fa-user"></i> Profile</a></li>
+                    </ul>
+                </nav>
+                <div class="main-content">
+                    <div class="vl"></div>
+                    <div class="content-body">
+                        {% block body %}
+                        {% endblock %}  
+                    </div>
+                    <div class="vl"></div>
+                </div>
+                <nav class="right-bar">
+                    <div class="header">
+                        On-going Projects
+                    </div>
+                </nav>
+            </div>
+        </div>
     </body>
 </html>
