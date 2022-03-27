@@ -3,12 +3,9 @@
 {% load static %}
 
 {% block body %}
+<div class="explore-container">
 	<script src="https://kit.fontawesome.com/0c698512f3.js" crossorigin="anonymous"></script>
-	{% if user.is_authenticated %}
-		<h1 class="exp-toptext">Welcome {{ user }}!</h1>
-	{% else %}
-		<h1 class="exp-toptext">Login to get get notified for projects that interest you!</h1>
-	{% endif%}
+	<h1 class="exp-toptext">Explore</h1>
 	<div class="projects-filter">
 		<form class="filter-query">
 			<input type="text" placeholder="Search:">
@@ -88,4 +85,5 @@
 			<button class="nav-next">NEXT</button>
 		</div>
 	</div>
+</div>
 {% endblock %}

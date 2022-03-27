@@ -144,11 +144,11 @@ body {
 .project-title {
 	position: absolute;
 	bottom: 15px;
-	margin-left: 25px;
+	margin-left: 35px;
 }
 
 .project-body {
-	padding: 25px;
+	padding: 35px;
 }
 
 .project-author::before {
@@ -314,7 +314,7 @@ body {
 }
 
 .form-container {
-	margin: 25px;
+	margin: 35px;
 }
 
 .form-container textarea { resize: none; }
@@ -431,6 +431,9 @@ body {
 /* END REGISTRATION FORM*/
 
 /* PROJECT EXPLORER*/
+.explore-container {
+	margin: 35px;
+}
 .exp-toptext {
 	/* media query later */
 }
