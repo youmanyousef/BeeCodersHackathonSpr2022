@@ -12,7 +12,10 @@ from .models import Project, StudentUser
 
 # Create your views here.
 def index(request):
-    return render(request, 'index.html')
+    context = {
+        'projects': Project.objects.order_by('-date_time')[:10]
+    }
+    return render(request, 'index.html', context=context)
 
 def project(request, id):
     try:
@@ -25,6 +28,7 @@ def project(request, id):
             "image": project_obj.image,
             "id": project_obj.id,
             "tags": project_obj.tags.all(),
+            'projects': Project.objects.order_by('-date_time')[:10]
         })
     except ObjectDoesNotExist:
         return render(request, 'index.html') # TODO IMPLEMENT 404 PAGE

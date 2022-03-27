@@ -53,6 +53,13 @@
                 <nav class="right-bar">
                     <div class="header">
                         On-going Projects
+                        {% for project in projects %}
+                            {% if user == project.author %}
+                                {% if not project.complete %}
+                                    <a href="/project/{{project.id}}" style="color:white;text-decoration:underline">{{project.title}}</a><br>
+                                {% endif %}
+                            {% endif %}
+                        {% endfor %}
                     </div>
                 </nav>
             </div>
