@@ -11,15 +11,32 @@ class StudentUser(AbstractUser):
     first_name = models.CharField(max_length=30)
     biography = models.CharField(max_length=200)
     # College/School Field              -- done 
-    school = models.CharField(max_length=60) # Create separate table with colleges and serve recommendations based on existing colleges in db?
+    LANEY = 'LANEY'
+    ALAMEDA = 'ALAMEDA'
+    MERITT = 'MERITT'
+    BERKELEY = 'BERKELEY'
+    SCHOOL_CHOICES = [
+        (LANEY, 'Laney College'),
+        (ALAMEDA, 'College of Alameda'),
+        (MERITT, 'Meritt College'),
+        (BERKELEY, 'Berkeley City College')
+    ]
+    school = models.CharField(max_length=30, choices=SCHOOL_CHOICES) # Create separate table with colleges and serve recommendations based on existing colleges in db?
     # Classes/Equivalent Field
+    classes = models.ManyToManyField("SubjectClass")
     # Bio                               -- done
     biography = models.CharField(max_length=200)
     # Interests (misc, not needed) 
     # Projects Followed                 -- done 
     # Projects Started                  -- done, projects started will be tracked through author field in project model
-    projects = models.ManyToManyField("Project")
+    projects = models.ManyToManyField("Project", blank=True)
     # Friends (misc, not needed)
+
+class SubjectClass(models.Model):
+    name = models.CharField(max_length=100)
+
+    def __str__(self):
+        return self.name
 
 # Project Listing data tables
 class Project(models.Model):

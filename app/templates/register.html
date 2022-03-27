@@ -11,6 +11,10 @@
 	
 </head>
 <body>
+	{% if error %}
+	<p>error</p>
+	{% endif %}		
+
 	<div class="form-container">
 		<form action="{% url 'register' %}" novalidate method="post" id="register">
 			{% csrf_token %}
