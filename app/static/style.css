@@ -10,6 +10,10 @@ body {
     color: #d1d0c5;
 }
 
+.fa-solid {
+  margin-right: 10px;
+}
+
 .container {
   display: flex;
   flex-direction: column;
@@ -36,12 +40,12 @@ body {
 }
 
 .nav-right li {
-  transition: 200ms;
+  transition: 100ms;
   display: flex;
 }
 
 .nav-right li:hover {
-  background-color: #d1d0c5;
+  background-color: #505050;
 }
 
 .nav-right li a {
@@ -55,7 +59,7 @@ body {
 .content {
   display: flex;
   flex: 1;
-  width: 85%;
+  width: 80%;
   height: auto;
   margin: 40px auto 20px auto;
 }
@@ -70,6 +74,13 @@ body {
 
 .left-bar ul li {
   padding: 25px 15px;
+  margin: 5px 0;
+  border-radius: 9px;
+  transition: 100ms;
+}
+
+.left-bar ul li:hover {
+  background-color: #505050;
 }
 
 .left-bar ul li a {

@@ -17,6 +17,9 @@ def index(request):
     }
     return render(request, 'layout.html', context=context)
 
+def project(request):
+    return render(request, 'project.html')
+
 def create(request):
     if request.method == 'GET':
         return render(request, 'create.html')
