@@ -6,8 +6,8 @@ How to clone our program:
 ```bash
 $ git init
 $ (main) git clone "https://github.com/youmanyousef/BeeCodersHackathonSpr2022.git"
-$ (main) chmod +x reset.sh
-$ (main) ./reset.sh
+$ (main) chmod +x reset_db.sh
+$ (main) ./reset_db.sh
 $ (main) python3 manage.py makemigrations app
 $ (main) python3 manage.py migrate
 $ (main) python3 manage.py createsuperuser
