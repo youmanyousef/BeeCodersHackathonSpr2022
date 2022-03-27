@@ -1,5 +1,4 @@
 {% load static %}
-
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -11,7 +10,7 @@
     </head>
     <body>
         <nav class="navgation-bar">
-           <div class="topnav">
+           <div class="topnav" style="z-index:1;">
                 <div class="topnav-right">
                     <a href="#Home">Home</a>
                     <a href="#Join A Project">Join A Project</a>
@@ -24,35 +23,40 @@
                 </div>
             </div>
         </nav>
-        <div class="hero">
-            <div class="vl-left"></div>
-            <div class="vl-right"></div>
+		<div id="container" style="padding-top:46px;z-index:0;">
+            <style> 
+                
+            </style>
 
-            <div class="header">
-                <h1>Home</h1>
-            
-            </div>
-        </div>
+			<div class="hero">
+				<div class="vl-left"></div>
+				<div class="vl-right"></div>
 
-        <nav class="right-bar">
-            <div class="header">
-                <h1>On-going projects</h1>
-            </div>
+				<div class="header">
+					<h1>Home</h1>
+				
+				</div>
+			</div>
 
-        </nav>
+			<nav class="right-bar">
+				<div class="header">
+					<h1>On-going projects</h1>
+				</div>
 
-        <nav class="side-bar">
-            <div class="side-bar-left">
-                <ul>
-                    <li><a href="#Home" class="link-text"> <i class="fa-solid fa-house"></i> Home</a></li>
-                    <li><a href="#Explore" class="link-text"> <i class="fa-solid fa-earth-americas"></i> Explore</a></li>
-                    <li><a href="#Notificatons" class="link-text"> <i class="fa-solid fa-bell"></i> Notificatons</a></li>
-                    <li><a href="#Messages" class="link-text"> <i class="fa-solid fa-message"></i> Messages</a></li>
-                    <li><a href="#Profile" class="link-text"> <i class="fa-solid fa-user"></i> Profile</a></li>
-                </ul>
-            </div>
-        </nav>
+			</nav>
 
+			<nav class="side-bar">
+				<div class="side-bar-left">
+					<ul>
+						<li><a href="#Home" class="link-text"> <i class="fa-solid fa-house"></i> Home</a></li>
+						<li><a href="#Explore" class="link-text"> <i class="fa-solid fa-earth-americas"></i> Explore</a></li>
+						<li><a href="#Notificatons" class="link-text"> <i class="fa-solid fa-bell"></i> Notificatons</a></li>
+						<li><a href="#Messages" class="link-text"> <i class="fa-solid fa-message"></i> Messages</a></li>
+						<li><a href="#Profile" class="link-text"> <i class="fa-solid fa-user"></i> Profile</a></li>
+					</ul>
+				</div>
+			</nav>
+		</div>
        
     </body>
 </html>
