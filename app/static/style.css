@@ -107,10 +107,32 @@ body {
   font-size: 13px;
   
 }
-
+/* LOGIN FORM*/
 .login-form {
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	height: 100vh;
 }
+.login-form #login {
+	width: 40vw;
+}
+.login-form input[type=text], .login-form input[type=password]{
+	width: 100%;
+	height: 40px;
+	font-size: 36px;
+	margin-top: 20px;
+}
+.login-form .pristine-error .text-help {
+	width: 40vw;
+}
+.login-form input[type=submit]{
+	align-items: center;
+	background-color: #9aa5b1;
+	border: none;
+	color: white;
+	padding: 16px 32px;
+	text-decoration: none;
+	margin: 4px 2px;
+}
+/* END LOGIN FORM*/
