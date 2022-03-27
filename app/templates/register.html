@@ -1,4 +1,6 @@
+{% extends 'layout.html' %}
 {% load static %}
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,6 +14,10 @@
 	
 </head>
 <body>
+=======
+
+{% block body %}
+>>>>>>> b6d6b490e6a8ba8366bbd23a42e3e73b5b3e2750
 	<div class="form-container">
 		<form action="{% url 'register' %}" novalidate method="post" id="register">
 			{% csrf_token %}
@@ -64,5 +70,4 @@
 			<button type="button" onclick="location.href='#';">Forgot login?</button>
 		</form>
 	</div>
-</body>
-</html>
+	{% endblock %}

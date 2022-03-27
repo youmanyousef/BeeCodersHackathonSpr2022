@@ -1,111 +1,115 @@
+<<<<<<< HEAD
 :root {
 	--radius: 9px;
 }
 
+=======
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+>>>>>>> b6d6b490e6a8ba8366bbd23a42e3e73b5b3e2750
 *, html, body {
   margin: 0;
   padding: 0;
+  font-family: 'Poppins', sans-serif;
 }
 
 body {
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
     background-color: #1e1e1e;
     color: #d1d0c5;
 }
-/* Add a black background color to the top navigation */
-.topnav {
-  position:fixed;
-  width:100%;
+
+.container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.nav-bar {
   background-color: rgba(49, 49, 49, 0.8);
-  overflow: hidden;
+  width: 100vw;
+  display: flex;
+  place-content: space-between;
+  height: 60px;
 }
 
-/* Style the links inside the navigation bar */
-.topnav .topnav-right a {
-  float: right;
-  color: #d1d0c5;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-  font-size: 13px;
-}
-
-.topnav .topnav-left {
-  text-align: left;
-  color: #d1d0c5;
-  padding: 14px 16px;
-  text-decoration: none;
-  font-size: 15px;
-}
-
-/* Change the color of links on hover */
-.topnav a:hover {
-  background-color: white;
-  color: black;
-}
-
-.link-text {
-  position: fixed;
-  left: 10vw;
-  text-decoration: none;
-  color:#d1d0c5;
-  font-size: 13px;
-}
-
-.side-bar ul li {
+.nav-bar ul {
   list-style-type: none;
-  padding: 40px;
-  
+  display: flex;
 }
 
-.hero {
-  text-align: center;
-  position:absolute;
-  right: 25vw;
-  width: 50%;
-  height: 100vw;
-  padding: 30px;
+.nav-left {
+  font-size: 15px;
+  margin: auto 0;
+  padding-left: 15px;
 }
 
-.hero .vl-left  {
-  border-left: 0.5px solid;
-  height: 100vw;
-  position: absolute;
-  right: 3%;
-  margin-left: -3px;
-  top: 0;
+.nav-right li {
+  transition: 200ms;
+  display: flex;
 }
 
-.hero .vl-right  {
-  border-left: 0.5px solid;
-  height: 100vw;
-  position: absolute;
-  left: 3%;
-  margin-left: -3px;
-  top: 0;
+.nav-right li:hover {
+  background-color: #d1d0c5;
 }
 
-.hero .header {
-  text-align: left;
-  border-bottom: 0.5px solid;
-  border-color: rgba(255, 255, 255, 0.3);
-  
+.nav-right li a {
+  text-decoration: none;
+  color: #d1d0c5;
+  font-size: 13px;
+  padding: 10px;
+  margin: auto 0;
+}
+
+.content {
+  display: flex;
+  flex: 1;
+  width: 85%;
+  height: auto;
+  margin: 40px auto 20px auto;
+}
+
+.left-bar {
+  width: 300px;
+}
+
+.left-bar ul {
+  list-style-type: none;
+}
+
+.left-bar ul li {
+  padding: 25px 15px;
+}
+
+.left-bar ul li a {
+  color: #d1d0c5;
+  text-decoration: none;
+}
+
+.main-content {
+  width: 100%;
+  margin-left: 25px;
+  margin-right: 25px;
+  display: flex;
+}
+
+.content-body {
+  width: 100%;
+  margin: 0 30px;
+}
+
+.vl {
+  border: solid .1px #d1d0c5;
 }
 
 .right-bar {
+  width: 400px;
+  height: 800px;  
+  padding: 15px;
   background-color: rgba(44, 44, 44, 0.5);
   border-radius: 9px;
-
-  position: absolute;
-  margin-top: 10px;
-  right: 6vw;
-  width: 250px;
-  height: 500px;
-
-  
 }
 
 .right-bar .header {
+<<<<<<< HEAD
   padding: 10px;
   text-align: left;
   font-size: 13px;
@@ -292,3 +296,7 @@ body {
 
 
 /* END REGISTRATION FORM*/
+=======
+  font-size: 25px;
+}
+>>>>>>> b6d6b490e6a8ba8366bbd23a42e3e73b5b3e2750

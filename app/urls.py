@@ -14,7 +14,7 @@ urlpatterns = [
     path('login', views.login_view, name='login'),
     
     # no front end needed 
-    path('logout', views.logout, name='logout'),
+    path('logout', views.logout_view, name='logout'),
     
     # should display form with input fields 'username' 'password' 'confirmation'
     # 'school' 'biography'-- submit button should perform post

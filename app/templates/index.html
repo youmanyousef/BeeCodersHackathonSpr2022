@@ -2,61 +2,54 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title>
-            Group finding webapp!
-        </title>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="{% static 'style.css' %}">
         <script src="https://kit.fontawesome.com/0c698512f3.js" crossorigin="anonymous"></script>
+        <title>Student Finder</title>
     </head>
     <body>
-        <nav class="navgation-bar">
-           <div class="topnav" style="z-index:1;">
-                <div class="topnav-right">
-                    <a href="#Home">Home</a>
-                    <a href="#Join A Project">Join A Project</a>
-                    <a href="#Login">Login</a>
-                    <a href="#Sign Up">Sign Up</a>
+        <div class="container">
+            <nav class="nav-bar">
+                <ul class="nav-left">
+                    <li>
+                        <i class="fa-solid fa-people-line"></i>
+                        Find groupwork in your area 
+                    </li>
+                </ul>
+                <ul class="nav-right">
+                    <li><a href="{% url 'index' %}">Home</a></li>
+                    <li><a href="{% url 'index' %}">Join A Project</a></li>
+                    <li><a href="{% url 'login' %}">Login</a></li>
+                    <li><a href="{% url 'register' %}">Register</a></li>
+                </ul>
+            </nav> 
+    
+            <div class="content">
+                <nav class="left-bar">
+                    <ul>
+                        <li><a href="#"><i class="fa-solid fa-house"></i> Home</a></li>
+                        <li><a href="#"><i class="fa-solid fa-earth-americas"></i> Explore</a></li>
+                        <li><a href="#"><i class="fa-solid fa-bell"></i> Notificatons</a></li>
+                        <li><a href="#"><i class="fa-solid fa-message"></i> Messages</a></li>
+                        <li><a href="#"><i class="fa-solid fa-user"></i> Profile</a></li>
+                    </ul>
+                </nav>
+                <div class="main-content">
+                    <div class="vl"></div>
+                    <div class="content-body">
+                        {% block body %}
+                        {% endblock %}  
+                    </div>
+                    <div class="vl"></div>
                 </div>
-                <div class="topnav-left"> 
-                    <i class="fa-solid fa-people-line"></i>
-                    Find groupwork in your area
-                </div>
+                <nav class="right-bar">
+                    <div class="header">
+                        On-going Projects
+                    </div>
+                </nav>
             </div>
-        </nav>
-		<div id="container" style="padding-top:46px;z-index:0;">
-            <style> 
-                
-            </style>
-
-			<div class="hero">
-				<div class="vl-left"></div>
-				<div class="vl-right"></div>
-
-				<div class="header">
-					<h1>Home</h1>
-				
-				</div>
-			</div>
-
-			<nav class="right-bar">
-				<div class="header">
-					<h1>On-going projects</h1>
-				</div>
-
-			</nav>
-
-			<nav class="side-bar">
-				<div class="side-bar-left">
-					<ul>
-						<li><a href="#Home" class="link-text"> <i class="fa-solid fa-house"></i> Home</a></li>
-						<li><a href="#Explore" class="link-text"> <i class="fa-solid fa-earth-americas"></i> Explore</a></li>
-						<li><a href="#Notificatons" class="link-text"> <i class="fa-solid fa-bell"></i> Notificatons</a></li>
-						<li><a href="#Messages" class="link-text"> <i class="fa-solid fa-message"></i> Messages</a></li>
-						<li><a href="#Profile" class="link-text"> <i class="fa-solid fa-user"></i> Profile</a></li>
-					</ul>
-				</div>
-			</nav>
-		</div>
-       
+        </div>
     </body>
 </html>

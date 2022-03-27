@@ -15,7 +15,7 @@ def index(request):
     context = {
         'user': request.user 
     }
-    return render(request, 'index.html', context=context)
+    return render(request, 'layout.html', context=context)
 
 def create(request):
     if request.method == 'GET':
@@ -50,7 +50,6 @@ def register(request):
         confirmation = request.POST.get('confirmation')
         if password != confirmation:
             #todo display error
-            print("error")
             return HttpResponseRedirect(reverse('index'))
 
         #attempt to create user
@@ -58,8 +57,9 @@ def register(request):
             user = StudentUser.objects.create_user(username, password)
             user.save()
         except IntegrityError:
-            # todo display "username taken"
-            print("error")
+            return render(request, 'register.html', {
+                "error": "Username is already taken!" 
+            })
 
         # Log in user, then redirect to home page
         login(request, user)
