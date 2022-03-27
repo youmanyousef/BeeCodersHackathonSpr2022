@@ -1,0 +1,69 @@
+{% extends 'layout.html' %}
+
+{% load static %}
+
+{% block body %}
+	<script src="https://kit.fontawesome.com/0c698512f3.js" crossorigin="anonymous"></script>
+	{% if user.is_authenticated %}
+		<h1 class="exp-toptext">Welcome {{ user.is_authenticated }}}!</h1>
+	{% else %}
+		<h1 class="exp-toptext">Login to get get notified for projects that interest you!</h1>
+	{% endif%}
+	<div class="projects-filter">
+		<form class="filter-query">
+			<input type="text" placeholder="Search:">
+		</form>
+		<form class="filter-by"> 
+			<select required>
+				<option value="none" selected disabled hidden>Filter</option>
+				<option>By Date Posted</option>
+				<option>By Interest Level</option>
+				<optgroup label="By Specific Class">
+					<!--iterate -->
+					<option>Computer Science</option>
+					<option>English</option>
+				</optgroup>
+			</select>
+		</form>
+		<form class="filter-page">
+			<select required>
+				<option value="none" selected disabled hidden>Results per page</option>
+				<option> &lt;5 </option>
+				<option> 10 </option>
+				<option> 25 </option>
+				<option> 50 </option>
+			</select>
+		</form>
+	</div>
+
+	<div class="projects-container">
+		<!-- iterate stuff here later, heres an example for 2 rows -->
+		<div class="project"> 
+			<img src="{% static 'cover.png' %}" alt="cover">
+			<div class="project-content">
+				<div class="project-title">
+					<!--div class="v-center">
+						<strong>NEED HELP! CHEM HW</strong><span> - Chris</span>
+						<i class="fa-solid fa-plus" stu></i>
+
+					</div-->
+					<div class="col-title">
+						<strong>NEED HELP WITH HW</strong>
+						<span>- Chris Y.</span>
+					</div>
+					<div class="col-follow">
+						<a href="#"><i class="fa-solid fa-plus" stu></i></a>
+						<a href="#"><i class="fa-solid fa-heart"></i></a>
+						<a href><i class="fa-solid fa-ellipsis"></i></a>
+					</div>
+				</div>
+				<div class="project-desc">
+					<!-- mr backend, limit to 60 chars. -->
+					<div class="v-center">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ...</div>
+				</div>
+			</div>
+		</div>
+		<div class="project"> jo </div>
+		
+	</div>
+{% endblock %}

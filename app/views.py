@@ -84,3 +84,7 @@ def login_view(request):
 def logout_view(request):
     logout(request)
     return HttpResponseRedirect(reverse('index'))
+
+
+def explore(request):
+    return render(request, 'explore.html')

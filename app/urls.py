@@ -30,5 +30,10 @@ urlpatterns = [
     # should display grid of projects request.user has created,
     # projects should be links to 'project/delete/<uuid>'
     # then should display toast or banner with success method
-    path('project/delete', views.delete_page, name='delete_page')
+    path('project/delete', views.delete_page, name='delete_page'),
+    
+    # explore projects page
+    path('explore', views.explore, name='explore')
+    
+    
 ]

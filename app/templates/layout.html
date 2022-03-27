@@ -22,7 +22,7 @@
                 </ul>
                 <ul class="nav-right">
                     <li><a href="{% url 'index' %}">Home</a></li>
-                    <li><a href="{% url 'index' %}">Join A Project</a></li>
+                    <li><a href="{% url 'explore' %}">Join A Project</a></li>
                     {% if user.is_authenticated %}
                         <li><a href="{% url 'logout' %}">Logout {{ user }}</a></li>
                     {% else %}
@@ -36,7 +36,7 @@
                 <nav class="left-bar">
                     <ul>
                         <li><a href="{% url 'index' %}"><i class="fa-solid fa-house"></i> Home</a></li>
-                        <li><a href="{% url 'index' %}"><i class="fa-solid fa-earth-americas"></i> Explore</a></li>
+                        <li><a href="{% url 'explore' %}"><i class="fa-solid fa-earth-americas"></i> Explore</a></li>
                         <li><a href="{% url 'index' %}"><i class="fa-solid fa-bell"></i> Notificatons</a></li>
                         <li><a href="{% url 'index' %}"><i class="fa-solid fa-message"></i> Messages</a></li>
                         <li><a href="{% url 'index' %}"><i class="fa-solid fa-user"></i> Profile</a></li>
