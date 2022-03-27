@@ -8,7 +8,9 @@ import uuid
 class StudentUser(AbstractUser):
     # Unique primary ID (key)
     # Name field                        -- done
+    image = models.CharField(max_length=1000, blank=True)
     first_name = models.CharField(max_length=30)
+    last_name = models.CharField(max_length=30)
     biography = models.CharField(max_length=200)
     # College/School Field              -- done 
     LANEY = 'LANEY'
@@ -38,6 +40,12 @@ class SubjectClass(models.Model):
     def __str__(self):
         return self.name
 
+class ProjectTag(models.Model):
+    name = models.CharField(max_length=20)
+
+    def __str__(self):
+        return self.name
+
 # Project Listing data tables
 class Project(models.Model):
     # Unique primary ID (key)
@@ -54,6 +62,9 @@ class Project(models.Model):
         ## Date
     date_time = models.DateTimeField()
         ## Edited dates (probably not needed)
+    image = models.CharField(max_length=1000, blank=True)
+
+    tags = models.ManyToManyField(ProjectTag)
 
     # Thread/Comments (possibly a json objecet with
         ## All comments

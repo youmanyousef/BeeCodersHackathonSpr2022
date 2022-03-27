@@ -3,5 +3,33 @@
 {% load static %}
 
 {% block body %}
-
+<div class="project-header">
+    <img class="project-img" src="{{ image }}" alt="{{ title }} image">
+    <div class="project-img-style"></div>
+    <h1 class="project-title">{{ title }}</h1>
+</div>
+<div class="project-body">
+    <div class="body-header">
+        <div class="project-left">
+            <h1 class="project-author">{{ author }}</h1>
+        </div>
+        <div class="project-right">
+            <h1 class="project-date">{{ date_time }}</h1>
+            {% if user == author %}
+            <a href="{% url 'delete' id %}" class="project-delete">Delete project</a>
+            {% endif %}
+            <a href="" class="project-btn">Add Tag</a>
+            <a href="" class="project-btn">Follow this project</a>
+        </div>
+    </div>
+    <p class="project-desc">{{ description }}</p>
+    <div class="project-tags">
+        <p class="tags-label">Tags</p>
+        <div class="tag-container">
+            {% for tag in tags %}
+            <p class="project-tag">{{ tag }}</p>
+            {% endfor %}
+        </div>
+    </div>
+</div>
 {% endblock %}

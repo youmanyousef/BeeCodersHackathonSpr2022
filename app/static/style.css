@@ -1,3 +1,4 @@
+/* LAYOUT */
 :root {
 	--radius: 9px;
 }
@@ -101,7 +102,6 @@ body {
 
 .content-body {
   width: 100%;
-  margin: 0 30px;
 }
 
 .vl {
@@ -119,6 +119,116 @@ body {
 .right-bar .header {
 	font-size: 25px;
 }
+/* END LAYOUT */
+
+/* PROJECT PAGE */
+.project-header {
+	display: flex;
+	position: relative;
+}
+
+.project-img {
+	overflow: hidden;
+	width: 100%;
+	height: 450px;
+	object-fit: cover;
+}
+
+.project-img-style {
+	position: absolute;
+	width: 100%;	
+	height: 100%;
+	background: linear-gradient(190deg, rgba(0, 0, 0, 0), 55%, rgba(0, 0, 0, 0.8));
+}
+
+.project-title {
+	position: absolute;
+	bottom: 15px;
+	margin-left: 25px;
+}
+
+.project-body {
+	padding: 25px;
+}
+
+.project-author::before {
+	content: 'By '
+}
+
+.project-author {
+	margin: auto 0;
+	font-size: 15px;
+	font-weight: 600; 
+}
+
+.project-date {
+	margin: auto 0 auto 15px;
+	font-weight: 600;
+	font-size: 15px;
+}
+
+.project-desc {
+	padding-top: 20px;
+}
+
+.body-header {
+	display: flex;
+	place-content: space-between;
+}
+
+.project-left {
+	margin: auto 0;
+	display: flex;
+}
+
+.project-tag {
+	background-color: rgb(192, 192, 192);
+	color: black;
+	border-radius: 99px;
+	padding: 5px 10px;
+	font-size: 9px;
+	margin-right: 8px;
+}
+
+.project-right {
+	display: flex;
+	/* margin-top: 15px; */
+	flex-direction: row-reverse;
+}
+
+.project-btn {
+	text-decoration: none;
+	font-size: 10px;
+	color: white;
+	background-color: rgb(65, 112, 201);
+	padding: 8px;
+	margin-left: 10px;
+	border-radius: 9px;
+}
+
+.project-delete {
+	text-decoration: none;
+	font-size: 10px;
+	color: white;
+	background-color: rgb(172, 64, 64);
+	padding: 8px;
+	margin-left: 10px;
+	border-radius: 9px;
+}
+
+.project-tags {
+	margin-top: 25px;
+}
+
+.tags-label {
+	font-size: 10px;
+}
+
+.tag-container {
+	margin-top: 5px;
+	display: flex;
+}
+/* END PROJECT PAGE */
 
 /* LOGIN FORM*/
 .login-form {
