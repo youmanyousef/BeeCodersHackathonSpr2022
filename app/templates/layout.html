@@ -7,6 +7,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="{% static 'style.css' %}">
         <script src="https://kit.fontawesome.com/0c698512f3.js" crossorigin="anonymous"></script>
+        {% block head %}
+        {% endblock %}
         <title>Student Finder</title>
     </head>
     <body>
@@ -21,12 +23,12 @@
                 <ul class="nav-right">
                     <li><a href="{% url 'index' %}">Home</a></li>
                     <li><a href="{% url 'index' %}">Join A Project</a></li>
-                    <!-- {% if user is not None %} -->
-                    <li><a href="{% url 'logout' %}">Logout</a></li>
-                    <!-- {% else %} -->
-                    <li><a href="{% url 'login' %}">Login</a></li>
-                    <li><a href="{% url 'register' %}">Register</a></li>
-                    <!-- {% endif %} -->
+                    {% if user.is_authenticated %}
+                        <li><a href="{% url 'logout' %}">Logout {{ user }}</a></li>
+                    {% else %}
+                        <li><a href="{% url 'login' %}">Login</a></li>
+                        <li><a href="{% url 'register' %}">Register</a></li>
+                    {% endif %}
                 </ul>
             </nav> 
     

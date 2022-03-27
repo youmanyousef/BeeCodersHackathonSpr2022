@@ -1,6 +1,11 @@
 {% extends 'layout.html' %}
 {% load static %}
 
+{% block head %}
+	<script src="{% static 'dist/pristine.min.js' %}"></script>
+	<script src="{% static 'register_validate.js' %}"></script>
+{% endblock %}
+
 {% block body %}
 	<div class="form-container">
 		<form action="{% url 'register' %}" novalidate method="post" id="register">
