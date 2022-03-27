@@ -230,6 +230,23 @@ body {
 }
 /* END PROJECT PAGE */
 
+/* HERO SECTION */
+.hero {
+	display: flex;
+	padding: 35px;
+	height: 50vh;
+	background-color: black;
+}
+
+.tagline {
+	font-size: 40px;
+}
+
+.perks li {
+	list-style-type: none;
+}
+/* END HERO */
+
 /* LOGIN FORM*/
 .login-form {
 	display: flex;
