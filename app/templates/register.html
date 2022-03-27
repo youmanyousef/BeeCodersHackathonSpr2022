@@ -1,23 +1,7 @@
 {% extends 'layout.html' %}
 {% load static %}
-<<<<<<< HEAD
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<script src={% static 'dist/pristine.js' %}  type="text/javascript"></script>
-	<script src={% static 'register_validate.js' %} type="text/javascript"></script>
-	<link rel="stylesheet" href="{% static 'style.css' %}">
-    <title>LOGIN</title>
-	
-</head>
-<body>
-=======
 
 {% block body %}
->>>>>>> b6d6b490e6a8ba8366bbd23a42e3e73b5b3e2750
 	<div class="form-container">
 		<form action="{% url 'register' %}" novalidate method="post" id="register">
 			{% csrf_token %}

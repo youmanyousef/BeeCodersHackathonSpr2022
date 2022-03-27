@@ -1,18 +1,7 @@
 {% extends 'layout.html' %}
 
 {% load static %}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<script src={% static 'dist/pristine.js' %}  type="text/javascript"></script>
-	<script src={% static 'login_validate.js' %} type="text/javascript"></script>
-	<link rel="stylesheet" href="{% static 'style.css' %}">
-    <title>LOGIN</title>
-</head>
-<body>
+{% block body %}
 	<div class="login-form">
 		<form novalidate method="post" id="login">
 			{% csrf_token %}
@@ -29,5 +18,4 @@
 			<button type="button" onclick="location.href='#';">Forgot login?</button>
 		</form>
 	</div>
-</body>
-</html>
+{% endblock %}
