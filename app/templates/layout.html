@@ -56,8 +56,38 @@
                         {% for project in projects %}
                             {% if user == project.author %}
                                 {% if not project.complete %}
-                                    <a href="/project/{{project.id}}" style="color:white;text-decoration:underline">{{project.title}}</a><br>
-                                {% endif %}
+
+                                    <!--a href="/project/{{project.id}}" style="color:white;text-decoration:underline">{{project.title}}</a><br-->
+                                    <style>
+                                        .project-card {
+                                            box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+                                            transition: 0.3s;
+                                            width: 100%;
+                                            font-size: 12px;
+                                            margin-top: 10%;
+                                        }
+
+                                        .project-card:hover {
+                                            box-shadow: 0 8px 16px 0 rgba(255,255,255,255.2);
+                                        }
+
+                                        .project-card-body {
+                                            padding: 2px 16px;
+                                        }
+                                    </style>
+                                    <div class="project-card">
+                                        
+                                        <img src={{project.image}} style="width:100%">
+                                        <div class="project-card-body">
+                                            <a href="/project/{{project.id}}" style="color:white;text-decoration:underline">
+                                                <strong>{{project.title}}</strong>
+                                                <span>- {{project.author}} - {% for subject in project.subject.all %} {{subject}} {% endfor%}</span>
+                                            </a>
+                                            <p></p>
+                                        </div>
+                                    </div>
+                                
+                                    {% endif %}
                             {% endif %}
                         {% endfor %}
                     </div>
