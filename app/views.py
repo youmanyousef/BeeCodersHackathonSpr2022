@@ -8,7 +8,7 @@ from django.core.exceptions import ObjectDoesNotExist
 
 from datetime import datetime
 
-from .models import Project, StudentUser
+from .models import Project, StudentUser, SubjectClass
 
 # Create your views here.
 def index(request):
@@ -60,18 +60,31 @@ def delete_page(request):
     return render(request, 'index.html') #change template
 
 def register(request):
+    context = {
+        'projects': Project.objects.order_by('-date_time')[:10],
+        'subject_classes': SubjectClass.objects.order_by('name')
+    }
+    print(context)
     if request.method == 'POST':
         username = request.POST.get('username')
-        
+        first_name = request.POST.get('first_name')
+        last_name = request.POST.get('last_name')
         password = request.POST.get('password')
         confirmation = request.POST.get('confirmation')
+        school = request.POST.get('school')
+        
         if password != confirmation:
             #todo display error
             return HttpResponseRedirect(reverse('index'))
-
+        biography = request.POST.get('biography')
         #attempt to create user
         try:
             user = StudentUser.objects.create_user(username, password)
+            user.biography = biography
+            user.last_name = last_name
+            user.first_name = first_name
+            user.school = school
+
             user.save()
         except IntegrityError:
             return render(request, 'register.html', {
@@ -83,7 +96,7 @@ def register(request):
         return HttpResponseRedirect(reverse('index'))
     else:
         # render registration page
-        return render(request, 'register.html')
+        return render(request, 'register.html', context=context)
 
 def login_view(request):
     if request.method == "POST":

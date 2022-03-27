@@ -16,6 +16,14 @@
 				<input type="text" name="username" required placeholder="Username.." data-pristine-required-message="Please choose a username">
 			</div>
 			<div class="form-group">
+				<!-- <label>Username</label> -->
+				<input type="text" name="first_name" required placeholder="First name.." data-pristine-required-message="Please enter name.">
+			</div>
+			<div class="form-group">
+				<!-- <label>Username</label> -->
+				<input type="text" name="last_name" required placeholder="Last name.." data-pristine-required-message="Please enter name.">
+			</div>
+			<div class="form-group">
 				<!-- <label>Password</label> -->
 				<input type="password" name="password" id="pwd" placeholder="Password.."
 				required data-pristine-required-message="Please choose a password" 
@@ -42,10 +50,13 @@
 			</select-->
 			<p>Select all the classes you are taking.</p>
 			<div class="classes"> <!-- iterate here -->
-				<input type="checkbox" id="CALC" /><label for="cb1">Calculus</label><br>
+				{% for subject in subject_classes %}
+				<input type="checkbox" id="{{subject}}" value="{{subject}}"/> <label for="{{subject}}">{{subject}}</label><br>
+				<!--input type="checkbox" id="CALC" /><label for="cb1">Calculus</label><br>
 				<input type="checkbox" id="CS" /><label for="cb1">Computer Science</label><br>
 				<input type="checkbox" id="CHEM" /><label for="cb1">Chemistry</label><br>
-				<input type="checkbox" id="ENGL" /><label for="cb1">English</label><br>
+				<input type="checkbox" id="ENGL" /><label for="cb1">English</label><br-->
+				{% endfor %}
 			</div>
 			
 			<!--select name="intrests">
