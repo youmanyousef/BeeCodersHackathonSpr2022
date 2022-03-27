@@ -3,5 +3,34 @@
 {% load static %}
 
 {% block body %}
-<h1>Welcome, {{ user }}!</h1>
+<div class="Project-Creation">
+<h1 class="title"> Create your project here!</h1>
+
+    <div class="text-input">
+        <form>
+            <div class="images">
+                <input type="text" class="line-0" placeholder="banner image">
+                <input type="text" class="line-0"  placeholder="cover icon">
+            </div>
+            <div class="bottom-text">
+                <div class="line-1">
+                    <input type="text" placeholder="Title" name="title">
+                    <input type="text" placeholder="contributers" name="team">
+                    
+                </div>
+                
+                <textarea class="description" placeholder="type your text here!" rows="10" name="desc"></textarea>
+
+                <div class="tags">
+                    <input type="text"  placeholder="What tags describe your project? separate by commas" name="tag">
+                </div>
+            </div>
+            <div class="button">
+                <input type="button" value="submit">
+            </div>
+           
+        </form> 
+       
+    </div>
+</div>
 {% endblock %}
