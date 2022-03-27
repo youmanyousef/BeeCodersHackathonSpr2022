@@ -503,6 +503,10 @@ body {
 .project-title-card .col-follow {
 	width: 19%;
 }
+.project-title-card a {
+	text-decoration: underline;
+	color:white;
+}
 .col-follow i {
 	float: right;
 }

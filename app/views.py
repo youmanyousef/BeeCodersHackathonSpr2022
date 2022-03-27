@@ -101,4 +101,7 @@ def logout_view(request):
 
 
 def explore(request):
-    return render(request, 'explore.html')
+    context = {
+        'projects': Project.objects.order_by('-date_time')[:10]
+    }
+    return render(request, 'explore.html', context=context)

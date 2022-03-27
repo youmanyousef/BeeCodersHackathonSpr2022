@@ -5,7 +5,7 @@
 {% block body %}
 	<script src="https://kit.fontawesome.com/0c698512f3.js" crossorigin="anonymous"></script>
 	{% if user.is_authenticated %}
-		<h1 class="exp-toptext">Welcome {{ user.is_authenticated }}}!</h1>
+		<h1 class="exp-toptext">Welcome {{ user }}!</h1>
 	{% else %}
 		<h1 class="exp-toptext">Login to get get notified for projects that interest you!</h1>
 	{% endif%}
@@ -38,7 +38,7 @@
 
 	<div class="projects-container">
 		<!-- iterate stuff here later, heres an example for 2 rows -->
-		<div class="project"> 
+		<!--div class="project"> 
 			<img src="{% static 'cover.png' %}" alt="cover">
 			<div class="project-content">
 				<div class="project-title-card">
@@ -53,12 +53,35 @@
 					</div>
 				</div>
 				<div class="project-desc">
-					<!-- mr backend, limit to 60 chars. -->
+					**mr backend, limit to 60 chars.**
 					<div class="v-center">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ...</div>
 				</div>
 			</div>
-		</div>
-		<div class="project"> jo </div>
+		</div-->
+		{% for project in projects %}
+			
+			<div class="project"> 
+				<img src="{% static 'cover.png' %}" alt="cover">
+				<div class="project-content">
+					<div class="project-title-card">
+						<div class="col-title"><a href="/project/{{project.id}}">
+							<strong>{{project.title}}</strong>
+							<span>- {{project.author}} - {% for subject in project.subject.all %} {{subject}} {% endfor%}</span></a>
+						</div>
+						<div class="col-follow">
+							<a href="#"><i class="fa-solid fa-plus" stu></i></a>
+							<a href="#"><i class="fa-solid fa-heart"></i></a>
+							<a href><i class="fa-solid fa-ellipsis"></i></a>
+						</div>
+					</div>
+					<div class="project-desc">
+						<!--mr backend, limit to 60 chars.**-->
+						<div class="v-center">{{ project.description|slice:":200" }}...</div>
+					</div>
+				</div>
+			</div>
+			</a>
+		{% endfor %}
 		
 	</div>
 {% endblock %}
