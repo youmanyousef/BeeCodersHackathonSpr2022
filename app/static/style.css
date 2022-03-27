@@ -557,6 +557,99 @@ body {
 	top: 50%;
 	transform: translateY(-50%);
 }
+
+/* END PROJECT EXPLORER*/
+
+/* begin project creation */
+
+.title {
+	text-align: center;
+	text-decoration: underline;
+	
+}
+
+.images .line-0 input[type=text]{
+	display:flex;
+	flex-direction: row;
+	justify-content: center;
+	width: 100%;
+	
+	
+}
+
+.text-input {
+	display:flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+.text-input input[type=text] {
+	width: 99%;
+	background-color: rgba(49, 49, 49, 0.8);
+	color:white;
+	outline: none;
+	border: none;
+	border-radius: 3px;
+}
+
+.text-input .line-1 {
+	display:flex;
+	flex-direction: row;
+	justify-content: center;
+	width: 102%;
+}
+
+.text-input .bottom-text {
+	margin-left: 10%;
+	width: 80%;
+	display: flex;
+	flex-direction: column;
+}
+
+.line-1 input[type=text] {
+	background-color: rgba(49, 49, 49, 0.8);
+	color:white;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	outline: none;
+	border: none;
+	padding: 5px;
+	border-radius: 3px;
+	margin-right: 5px;
+}
+
+.text-input textarea {
+	background-color: rgba(49, 49, 49, 0.8);
+	padding: 5px;
+	color:white;
+	border: none;
+	outline: none;
+	resize: none;
+	border-radius: 3px;
+}
+
+.text-input .tags input[type=text] {
+	background-color: rgba(49, 49, 49, 0.8);
+	color:white;
+	border: none;
+	outline: none;
+	resize: none;
+	padding-bottom: 5px;
+	border-radius: 3px;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+.button {
+	text-align: center;
+	
+}
+
+
+/* end project creation */
 .projects-navigation {
 	width: 100%;
 }
