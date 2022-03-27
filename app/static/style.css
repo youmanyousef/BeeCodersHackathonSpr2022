@@ -191,6 +191,10 @@ body {
 /* END LOGIN FORM*/
 
 /* REGISTRATION FORM*/
+#register {
+	width: 100%;
+}
+
 .form-container textarea { resize: none; }
 .form-container {
 	

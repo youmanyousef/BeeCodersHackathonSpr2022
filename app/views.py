@@ -11,11 +11,7 @@ from .models import Project, StudentUser
 
 # Create your views here.
 def index(request):
-    #return HttpResponse("hello worlds!")
-    context = {
-        'user': request.user 
-    }
-    return render(request, 'layout.html', context=context)
+    return render(request, 'index.html')
 
 def project(request):
     return render(request, 'project.html')

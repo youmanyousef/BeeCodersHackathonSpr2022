@@ -48,6 +48,7 @@ class Project(models.Model):
         ## Student Name
     author = models.ForeignKey(StudentUser, on_delete=models.CASCADE)
         ## Subject
+    subject = models.ManyToManyField(SubjectClass) 
         ## Body
     description = models.CharField(max_length=200, blank=True)
         ## Date
