@@ -128,3 +128,5 @@ dmypy.json
 .pyre/
 
 /studentfinder/__pycache__/*
+
+/app/migrations/*
