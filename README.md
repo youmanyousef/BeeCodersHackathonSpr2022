@@ -27,7 +27,8 @@ http://127.0.0.1:8000/admin
 `
 
 Thanks so much!
-
+https://www.youtube.com/watch?v=a1su_PqrwZs
+https://devpost.com/software/groupwork-project-networking-service
 Libraries used
 Django: https://github.com/django/django
 Pristine.js: https://github.com/sha256/Pristine
