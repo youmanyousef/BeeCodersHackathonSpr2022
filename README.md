@@ -30,6 +30,9 @@ Thanks so much!
 DEMO https://www.youtube.com/watch?v=a1su_PqrwZs
 
 DEVPOST https://devpost.com/software/groupwork-project-networking-service
+
 Libraries used
+
 Django: https://github.com/django/django
+
 Pristine.js: https://github.com/sha256/Pristine
